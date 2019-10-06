@@ -1,22 +1,30 @@
 
 <?php
 
+// sanitizeFormUsername
 function sanitizeFormUsername($inputText) {
 	$inputText = strip_tags($inputText);
 		// replace whitespaces  
 	$inputText = str_replace(" ", "", $inputText);
 	return $inputText;
-
 }
 
+// sanitizeFormString
 function sanitizeFormString($inputText) {
 	$inputText = strip_tags($inputText);
 	$inputText = str_replace(" ", "", $inputText);
 	// lowercase every character and then upercase first letter
 	$inputText = ucfirst(strtolower($inputText));
 	return $inputText;
+}
+
+// sanitizePassword
+function sanitizePassword($inputText) {
+	$inputText = strip_tags($inputText);
+	return $inputText;
 
 }
+
 
 if(isset($_POST['loginButton'])) {
 	// Login button was pressed
@@ -34,9 +42,9 @@ if(isset($_POST['registerButton'])) {
 
 	$email2 = sanitizeFormString($_POST['email2']);
 
-	$password = sanitizeFormString($_POST['password']);
+	$password = sanitizePassword($_POST['password']);
 
-	$password2 = sanitizeFormString($_POST['password2']);
+	$password2 = sanitizePassword($_POST['password2']);
 	
 }
 
