@@ -2,6 +2,7 @@
 
   class Account {
 
+	// Array of errors
 	private $errorArray;
 
     public function __construct() {
@@ -22,8 +23,17 @@
 			return false;
 		}
 	}
+
+	// ERROR HANDLER
+	// if error we passed in is in the array of errors
+	public function getError($error) {
+		if(!in_array($error, $this->errorArray)) {
+			$error = "";
+		}
+		return "<span class='errorMessage'>$error</span>";
+	}
 	  
-	  
+	// USERNAME VALIDATE HANDLER  
 	private function validateUsername($un) {
 		// username has to be between 5 and 25 chars
 		if(strlen($un) > 25 || strlen($un) < 5) {
@@ -34,6 +44,7 @@
 		//TODO: check if username exists
 	}
 	
+	// FIRSTNAME VALIDATE HANDLER
 	private function validateFirstName($fn) {
 		if(strlen($fn) > 25 || strlen($fn) < 2) {
 			array_push($this->errorArray, "Your first name must be between 2 and 25 characters");
@@ -41,13 +52,15 @@
 		}
 	}	
 	
+	// LASTNAME VALIDATE HANDLER
 	private function validateLastName($ln) {
 		if(strlen($ln) > 25 || strlen($ln) < 2) {
-			array_push($this->errorArray, "Your last name must be between 5 and 25 characters");
+			array_push($this->errorArray, "Your last name must be between 2 and 25 characters");
 			return;
 		}
 	}
 	
+	// EMAILS VALIDATE HANDLER
 	private function validateEmails($em, $em2) {
 		if($em != $em2) {
 			array_push($this->errorArray, "Your emails don't match");
@@ -61,6 +74,7 @@
 		//TODO: Check that username hasn't already been used.
 	}
 	
+	// PASSWORDS VALIDATE HANDLER
 	private function validatePasswords($pw, $pw2) {
 		if($pw != $pw2) {
 		array_push($this->errorArray, "Your passwords don't match");
