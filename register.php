@@ -1,3 +1,7 @@
+<?php 
+include('includes/handlers/register-handler.php' );
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
