@@ -10,8 +10,8 @@
 
 	public function register($us, $fn, $ln, $em, $em2, $pw, $pw2) {	
 		$this->validateUsername($us);
-		$this->validatefirstName($fn);
-		$this->validatelastName($ln);
+		$this->validateFirstName($fn);
+		$this->validateLastName($ln);
 		$this->validateEmails($em, $em2);
 		$this->validatePasswords($pw, $pw2);
 	}
@@ -27,16 +27,29 @@
 		//TODO: check if username exists
 	}
 	
-	private function validateFirstname($fn) {
-
+	private function validateFirstName($fn) {
+		if(strlen($fn) > 25 || strlen($fn) < 2) {
+			array_push($this->errorArray, "Your first name must be between 2 and 25 characters");
+			return;
 	}
 	
-	private function validateLastname($ln) {
-
+	private function validateLastName($ln) {
+		if(strlen($ln) > 25 || strlen($ln) < 2) {
+			array_push($this->errorArray, "Your last name must be between 5 and 25 characters");
+			return;
 	}
 	
 	private function validateEmails($em, $em2) {
+		if($em != $em2) {
+			array_push($this->errorArray, "Your emails don't match");
+			return;
+		}
+		if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+			array_push($this->errorArray, "Email is not valid");
+			return;
+		}
 
+		//TODO: Check that username hasn't already been used.
 	}
 	
 	private function validatePasswords($pw, $pw2) {
