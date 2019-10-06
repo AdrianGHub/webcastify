@@ -42,7 +42,7 @@
 		$date = date("Y-m-d");
 
 		// returns true or false
-		$result = mysqli_query($this->con, "INSERT INTO users VALUES('', '$un', '$fn', '$ln', '$em', '$encryptePw', '$profilePic', '$date')");
+		$result = mysqli_query($this->con, "INSERT INTO users VALUES('', '$un', '$fn', '$ln', '$em', '$encryptePw', '$date', '$profilePic')");
 
 		return $result;
 	}
