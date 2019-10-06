@@ -11,8 +11,8 @@
 		$this->errorArray = array();
 	}
 
-	public function register($us, $fn, $ln, $em, $em2, $pw, $pw2) {	
-		$this->validateUsername($us);
+	public function register($un, $fn, $ln, $em, $em2, $pw, $pw2) {	
+		$this->validateUsername($un);
 		$this->validateFirstName($fn);
 		$this->validateLastName($ln);
 		$this->validateEmails($em, $em2);
@@ -20,7 +20,7 @@
 
 		if(empty($this->errorArray)) {
 			// Insert into db
-			return insertUserDetails($un, $fn, $ln, $em, $pw);
+			return $this->insertUserDetails($un, $fn, $ln, $em, $pw);
 		} else {
 			return false;
 		}
