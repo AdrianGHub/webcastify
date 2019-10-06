@@ -11,6 +11,8 @@ if(isset($_POST['loginButton'])) {
 
 	// if successful
 	if($result) {
+		// session allows to stay logged in
+		$_SESSION['userLoggedIn'] = $username;
 		// Redirect to index page
 		header("Location: index.php");
 	}

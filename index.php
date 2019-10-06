@@ -1,3 +1,20 @@
+<?php 
+
+include("includes/config.php");
+
+//session_destroy(); --> manual logout
+
+
+// check if user is logged in
+if(isset($_SESSION['userLoggedIn'])) {
+  $userLoggedIn = $_SESSION['userLoggedIn'];
+} else {
+  header("Location: register.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +24,6 @@
   <title>Welcome to Webcastify</title>
 </head>
 <body>
-  
+  <h1>Webcastify</h1>
 </body>
 </html>
