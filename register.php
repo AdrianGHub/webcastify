@@ -1,9 +1,8 @@
 <?php 
 include('includes/classes/Account.php');
 
+// creates new objects of the class Account
 $account = new Account();
-$account->register();
-
 
 include('includes/handlers/register-handler.php' );
 include('includes/handlers/login-handler.php' );

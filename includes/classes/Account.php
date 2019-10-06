@@ -6,12 +6,12 @@
 
 	}
 
-	public function register() {	
-		$this->validateUsername($username);
-		$this->validatefirstName($firstName);
-		$this->validatelastName($lastName);
-		$this->validateEmails($email, $email2);
-		$this->validatePasswords($password, $password2);
+	public function register($us, $fn, $ln, $em, $em2, $pw, $pw2) {	
+		$this->validateUsername($us);
+		$this->validatefirstName($fn);
+		$this->validatelastName($ln);
+		$this->validateEmails($em, $em2);
+		$this->validatePasswords($pw, $pw2);
 	}
 	  
 	  
