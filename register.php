@@ -21,9 +21,12 @@ function getInputValue($name) {
 <html lang="en">
 <head>
   <title>Welcome to Webcastify</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/register.css">
 </head>
 <body>
   
+<div id="backgroud">
+	<div id="loginContainer">
   <div id="inputContainer">
 	<form id="loginForm" action="register.php" method="POST">
     	<h2>Login to your account</h2>
@@ -38,6 +41,11 @@ function getInputValue($name) {
 			</p>
 			
 			<button type="submit" name="loginButton">LOG IN</button>
+
+			<div class="hasAccountText">
+				<span id="hideLogin">Don't have an account yet? Sign up here.</span>
+			</div>
+
 	</form>
 	
 
@@ -91,8 +99,16 @@ function getInputValue($name) {
 			</p>
 			
 			<button type="submit" name="registerButton">SIGN IN</button>
-    </form>
+
+			
+			<div class="hasAccountText">
+				<span id="hideRegister">Already have an account? Log in here.</span>
+			</div>
+
+	</form>
   </div>
+  </div>
+</div>
 
 </body>
 </html>					
