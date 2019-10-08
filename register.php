@@ -43,7 +43,7 @@ function getInputValue($name) {
 			<button type="submit" name="loginButton">LOG IN</button>
 
 			<div class="hasAccountText">
-				<span id="hideLogin">Don't have an account yet? Sign up here.</span>
+				<span class="hideLogin">Don't have an account yet? Sign up here.</span>
 			</div>
 
 	</form>
@@ -102,7 +102,7 @@ function getInputValue($name) {
 
 			
 			<div class="hasAccountText">
-				<span id="hideRegister">Already have an account? Log in here.</span>
+				<span class="hideRegister">Already have an account? Log in here.</span>
 			</div>
 
 	</form>
@@ -110,5 +110,8 @@ function getInputValue($name) {
   </div>
 </div>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/register.js"></script>
 </body>
 </html>					

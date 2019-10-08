@@ -18,7 +18,6 @@ html, body {
 #loginContainer * {
     color: #fff;
     font-family: 'Helvwtica Neue', "Helvetica", "Arial", sans-serif;
-    font-weight: normal;
     line-height: 1em;
     box-sizing: border-box;
 }
