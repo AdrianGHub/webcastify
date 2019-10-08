@@ -94,8 +94,41 @@ html, body {
 .hasAccountText span {
     font-weight: bold;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .hasAccountText {
     text-align: center;
+}
+
+#registerForm, #loginForm {
+    display: none;
+}
+
+#loginText {
+    padding: 45px;
+    display: table-cell;
+}
+
+#loginText h1 {
+    color: #07d159;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#loginText h2 {
+    margin: 35px 0;
+    font-weight: normal;
+}
+
+#loginText ul {
+    padding: 0;
+    font-weight: normal;
+}
+
+#loginText li {
+    font-size: 20px;
+    list-style-type: none;
+    padding: 5px 30px;
+    background: url('../images/icons/checkmark.png') no-repeat; 
 }
