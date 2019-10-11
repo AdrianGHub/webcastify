@@ -20,7 +20,7 @@ function getInputValue($name) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Welcome to Webcastify</title>
+  <title>Welcome to Webcastify!</title>
   <link rel="stylesheet" type="text/css" href="assets/css/register.css">
 </head>
 <body>
@@ -110,7 +110,7 @@ function getInputValue($name) {
 		  
 	<div id="loginText">
 		<h1>Get great podcast, right now</h1>
-		<h2>Listen to loads of songs for free</h2>
+		<h2>Listen to loads of podcasts for free</h2>
 		<ul>
 			<li>Discover podcasts you'll fall in love with</li>
 			<li>Create your own playlist</li>
