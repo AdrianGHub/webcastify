@@ -35,14 +35,14 @@ if(isset($_POST['registerButton'])) {
 	$password2 = sanitizePassword($_POST['password2']);	
 
 	// check if registration was successful
-	$wasSuccessul = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
+	$wasSuccessful = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);
 
 	// if successful
-	if($wasSuccessul) {
-		// session allows to stay logged in
-		$_SESSION['userLoggedIn'] = $username;
-		// Redirect to index page
+	if($wasSuccessful == true) {
 		header("Location: index.php");
+	}
+	else {
+		header("Location: test.php");
 	}
 }
 
