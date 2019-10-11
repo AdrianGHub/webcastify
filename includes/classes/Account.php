@@ -51,12 +51,12 @@
 
 	private function insertUserDetails($un, $fn, $ln, $em, $pw) {
 		// method to encrypt password into 32 chars
-		$encryptePw = md5($pw);
+		$encryptedPw = md5($pw);
 		$profilePic = "assets/images/profile-pics/head_emarald.png";
 		$date = date("Y-m-d");
 
 		// returns true or false
-		$result = mysqli_query($this->con, "INSERT INTO users VALUES('', '$un', '$fn', '$ln', '$em', '$encryptePw', '$date', '$profilePic')");
+		$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$un', '$fn', '$ln', '$em', '$encryptedPw','$date','$profilePic')");
 
 		return $result;
 	}
