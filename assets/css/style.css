@@ -28,6 +28,7 @@ body {
     height: 90px;
     padding: 16px;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 #nowPlayingLeft,
