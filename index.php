@@ -1,29 +1,44 @@
-<?php 
-
+<?php
 include("includes/config.php");
 
-//session_destroy(); --> manual logout
+//session_destroy(); LOGOUT
 
-
-// check if user is logged in
 if(isset($_SESSION['userLoggedIn'])) {
-  $userLoggedIn = $_SESSION['userLoggedIn'];
-} else {
-  header("Location: register.php");
+	$userLoggedIn = $_SESSION['userLoggedIn'];
 }
+
 
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Welcome to Webcastify</title>
+	<title>Welcome to Webcstify!</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-<body>
-  <h1>Webcastify</h1>
-</body>
+
+
+	<body>
+		
+
+		<div id="mainContainer">
+		
+			<div id="topContainer">
+
+				<?php include("includes/navBarContainer.php"); ?>
+
+			</div>
+
+
+			<div id="nowPlayingBarContainer">
+
+				<?php include("includes/nowPlayingBarContainer.php"); ?>
+
+			</div>
+
+		</div>
+
+
+	</body>
+
 </html>
