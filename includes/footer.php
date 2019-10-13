@@ -1,15 +1,15 @@
-</div>
+    </div>
 
 
-</div>
+    </div>
 
-</div>
+    </div>
 
-<?php include("includes/nowPlayingBarContainer.php"); ?>
+    <?php include("includes/nowPlayingBarContainer.php"); ?>
 
-</div>
+    </div>
 
-</body>
+    </body>
 
-</html>
-</html>
+    </html>
+    </html>
