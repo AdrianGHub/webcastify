@@ -22,7 +22,7 @@
 			</div>
 
 			<div class="navItem">
-				<a href="yourMusic.php" class="navItemLink">Your Music</a>
+				<a href="yourPodcast.php" class="navItemLink">Your Podcast</a>
 			</div>
 
 			<div class="navItem">
