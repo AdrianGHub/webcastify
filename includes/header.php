@@ -2,6 +2,7 @@
 include("includes/config.php");
 include("includes/classes/Artist.php");
 include("includes/classes/Album.php");
+include("includes/classes/Podcast.php");
 
 //session_destroy(); LOGOUT
 
