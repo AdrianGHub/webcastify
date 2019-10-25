@@ -1,3 +1,18 @@
+<?php 
+
+$podcastQuery = mysqli_query($con, "SELECT id FROM podcasts ORDER BY RAND() LIMIT 10");
+
+$resultArray = array();
+
+while($row = mysqli_fetch_array($podcastQuery)) {
+	array_push($resultArray, $row['id']);
+}
+
+$jsonArray = json_encode($resultArray);
+
+?>
+
+
 <div id="nowPlayingBarContainer">
 
 	<div id="nowPlayingBar">
