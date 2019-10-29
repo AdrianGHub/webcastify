@@ -12,6 +12,32 @@ $jsonArray = json_encode($resultArray);
 
 ?>
 
+<script>
+
+$(document).ready(function() {
+	currentPlaylist = <?php echo $jsonArray; ?>;
+	audioElement = new Audio(); 
+	setTrack(currentPlaylist[0], currentPlaylist, false);
+});
+
+function setTrack(trackId, nowPlaylist, play) {
+	audioElement.setTrack("assets/music/bensound-acousticbreeze.mp3");
+}
+
+function playPodcast() {
+	$(".controlButton.play").hide();
+	$(".controlButton.pause").show();
+	audioElement.play();
+}
+
+function pausePodcast() {
+	$(".controlButton.play").show();
+	$(".controlButton.pause").hide();
+	audioElement.pause();
+}
+
+</script>
+
 
 <div id="nowPlayingBarContainer">
 
@@ -54,11 +80,11 @@ $jsonArray = json_encode($resultArray);
 						<img src="assets/images/icons/previous.png" alt="Previous">
 					</button>
 
-					<button class="controlButton play" title="Play button">
+					<button class="controlButton play" title="Play button" onclick="playPodcast()">
 						<img src="assets/images/icons/play.png" alt="Play">
 					</button>
 
-					<button class="controlButton pause" title="Pause button" style="display: none;">
+					<button class="controlButton pause" title="Pause button" onclick="pausePodcast()" style="display: none;">
 						<img src="assets/images/icons/pause.png" alt="Pause">
 					</button>
 
