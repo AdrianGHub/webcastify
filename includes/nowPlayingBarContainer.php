@@ -41,11 +41,16 @@ function setTrack(trackId, nowPlaylist, play) {
 			
 		});
 
-		audioElement.setTrack(track.path);
+		audioElement.setTrack(track);
 	})
 }
 
 function playPodcast() {
+
+	if(audioElement.audio.currentTime == 0) {
+		$.post("includes/handlers/ajax/updatePlays.php", { podcastId:  audioElement.currentPlaying.id });
+	}
+
 	$(".controlButton.play").hide();
 	$(".controlButton.pause").show();
 	audioElement.play();
