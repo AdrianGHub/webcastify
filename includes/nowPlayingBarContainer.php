@@ -79,7 +79,52 @@ function timeFromOffset(mouse, progressBar) {
 	audioElement.setTime(seconds);
 }
 
+function prevPodcast() {
+	if(audioElement.audio.currentTime >= 3 || currentIndex == 0) {
+		audioElement.setTime(0);
+	} else {
+		currentIndex = currentIndex - 1;
+		setTrack(currentPlaylist[currentIndex], currentPlaylist, true);
+	}
+}
+
+function nextPodcast() {
+
+	if(repeat == true) {
+		audioElement.setTime(0);
+		playPodcast();
+		return;
+	}
+
+	if(currentIndex == currentPlaylist.length - 1) {
+		currentIndex = 0;
+	} 
+	else {
+		currentIndex++;
+	}
+
+	var trackToPlay = currentPlaylist[currentIndex];
+	setTrack(trackToPlay, currentPlaylist, true);
+}
+
+function setMute() {
+	repeat = !repeat;
+	var imageName = repeat ? "repeat-active.png" : "repeat.png";
+	$(".controlButton.repeat img").attr("src", `assets/images/icons/${imageName}`);
+}
+
+function setMute() {
+	audioElement.audio.muted = !audioElement.audio.muted;
+	var imageName = audioElement.audio.muted ? "volume-mute.png" : "volume.png";
+	$(".controlButton.volume img").attr("src", `assets/images/icons/${imageName}`);
+}
+
 function setTrack(trackId, nowPlaylist, play) {
+
+	currentIndex = currentPlaylist.indexOf(trackId);
+	pausePodcast();
+		
+
 	$.post("includes/handlers/ajax/getPodcastJson.php", { podcastId: trackId }, function(data) {
 
 		var track = JSON.parse(data);
@@ -101,6 +146,7 @@ function setTrack(trackId, nowPlaylist, play) {
 		});
 
 		audioElement.setTrack(track);
+		// audioElement.play();
 	})
 }
 
@@ -161,7 +207,7 @@ function pausePodcast() {
 						<img src="assets/images/icons/shuffle.png" alt="Shuffle">
 					</button>
 
-					<button class="controlButton previous" title="Previous button">
+					<button class="controlButton previous" title="Previous button" onclick="prevPodcast()">
 						<img src="assets/images/icons/previous.png" alt="Previous">
 					</button>
 
@@ -173,11 +219,11 @@ function pausePodcast() {
 						<img src="assets/images/icons/pause.png" alt="Pause">
 					</button>
 
-					<button class="controlButton next" title="Next button">
+					<button class="controlButton next" title="Next button" onclick="nextPodcast()">
 						<img src="assets/images/icons/next.png" alt="Next">
 					</button>
 
-					<button class="controlButton repeat" title="Repeat button">
+					<button class="controlButton repeat" title="Repeat button" onclick="setRepeat()">
 						<img src="assets/images/icons/repeat.png" alt="Repeat">
 					</button>
 
@@ -208,7 +254,7 @@ function pausePodcast() {
 		<div id="nowPlayingRight">
 			<div class="volumeBar">
 
-				<button class="controlButton volume" title="Volume button">
+				<button class="controlButton volume" title="Volume button" onclick="setMute()">
 					<img src="assets/images/icons/volume.png" alt="Volume">
 				</button>
 
