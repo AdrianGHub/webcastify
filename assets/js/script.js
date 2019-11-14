@@ -1,8 +1,10 @@
 var currentPlaylist = [];
+var shufflePlaylist = [];
 var audioElement;     
 var mouseDown = false;
 var currentIndex = 0;
 var repeat = false;
+var shuffle = false;
 
 
 // class Audio {
@@ -67,7 +69,7 @@ function Audio() {
     
     
         this.setTrack = function(track) {
-            this.currentPlaying = track;
+            this.currentlyPlaying = track;
             this.audio.src = track.path;
     }
 

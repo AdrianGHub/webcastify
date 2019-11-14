@@ -15,9 +15,9 @@ $jsonArray = json_encode($resultArray);
 <script>
 
 $(document).ready(function() {
-	currentPlaylist = <?php echo $jsonArray; ?>;
+	var newPlaylist = <?php echo $jsonArray; ?>;
 	audioElement = new Audio(); 
-	setTrack(currentPlaylist[0], currentPlaylist, false);
+	setTrack(newPlaylist[0], newPlaylist, false);
 	updateVolumeProgressBar(audioElement.audio);
 
 	$("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove", function(e) {
@@ -103,11 +103,11 @@ function nextPodcast() {
 		currentIndex++;
 	}
 
-	var trackToPlay = currentPlaylist[currentIndex];
+	var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
 	setTrack(trackToPlay, currentPlaylist, true);
 }
 
-function setMute() {
+function setRepeat() {
 	repeat = !repeat;
 	var imageName = repeat ? "repeat-active.png" : "repeat.png";
 	$(".controlButton.repeat img").attr("src", `assets/images/icons/${imageName}`);
@@ -119,9 +119,45 @@ function setMute() {
 	$(".controlButton.volume img").attr("src", `assets/images/icons/${imageName}`);
 }
 
-function setTrack(trackId, nowPlaylist, play) {
+function setShuffle() {
+	shuffle = !shuffle;
+	var imageName = shuffle ? "shuffle-active.png" : "shuffle.png";
+	$(".controlButton.shuffle img").attr("src", `assets/images/icons/${imageName}`);
 
-	currentIndex = currentPlaylist.indexOf(trackId);
+	if(shuffle) {
+		// Randomize playlist
+		shuffleArray(shufflePlaylist);
+		currentIndex = shufflePlaylist.indexOf(audioElement.currentlyPlaying.id);
+	} 
+	else {
+		// Shuffle has been deactivated
+		// Go back to regular playlist
+		currentIndex = currentPlaylist.indexOf(audioElement.currentlyPlaying.id);
+	}
+}
+
+function shuffleArray(array) {
+    for (var i = array.length; i; i--) {
+        var j = Math.floor(Math.random() * 1);
+        var temp = array[i - 1];
+        array[i - 1] = array[j];
+        array[j] = temp;
+    }
+}
+
+function setTrack(trackId, newPlaylist, play) {
+
+	if(newPlaylist != currentPlaylist) {
+		currentPlaylist = newPlaylist;
+		shufflePlaylist = currentPlaylist.slice();
+		shuffleArray(shufflePlaylist);
+	}
+
+	if(shuffle) {
+		currentIndex = shufflePlaylist.indexOf(trackId);	
+	} else {
+		currentIndex = currentPlaylist.indexOf(trackId);
+	}
 	pausePodcast();
 		
 
@@ -146,14 +182,19 @@ function setTrack(trackId, nowPlaylist, play) {
 		});
 
 		audioElement.setTrack(track);
-		// audioElement.play();
-	})
+		// playPodcast();
+	});
+
+	if(play) {
+		audioElement.play();
+	}
+
 }
 
 function playPodcast() {
 
 	if(audioElement.audio.currentTime == 0) {
-		$.post("includes/handlers/ajax/updatePlays.php", { podcastId:  audioElement.currentPlaying.id });
+		$.post("includes/handlers/ajax/updatePlays.php", { podcastId:  audioElement.currentlyPlaying.id });
 	}
 
 	$(".controlButton.play").hide();
@@ -203,7 +244,7 @@ function pausePodcast() {
 
 				<div class="buttons">
 
-					<button class="controlButton shuffle" title="Shuffle button">
+					<button class="controlButton shuffle" title="Shuffle button" onclick="setShuffle()">
 						<img src="assets/images/icons/shuffle.png" alt="Shuffle">
 					</button>
 
