@@ -22,7 +22,7 @@ $artist = $album->getArtist();
     <div class="rightSection">
         <h2><?php echo $album->getTitle(); ?></h2>
         <p>By <?php echo $artist->getName(); ?></p>
-        <p><?php echo $album->getNumberOfPodcasts(); ?> podcasts</p>
+        <p><?php echo $album->getNumberOfPodcasts(); ?></p>
     </div>
 </div>
 
@@ -38,7 +38,6 @@ $artist = $album->getArtist();
 
                 $albumPodcast = new Podcast($con, $podcastId);
 
-                echo $albumPodcast->getTitle() . "<br>";
                 $albumArtist = $albumPodcast->getArtist(); 
 
                 echo "<li class='tracklistRow'>
