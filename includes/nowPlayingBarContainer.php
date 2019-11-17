@@ -182,7 +182,7 @@ function setTrack(trackId, newPlaylist, play) {
 		});
 
 		audioElement.setTrack(track);
-		// playPodcast(); // autoplay is not allowed by Google Chrome
+
 	});
 
 	if(play) {
