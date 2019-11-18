@@ -18,9 +18,9 @@ function getInputValue($name) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <title>Welcome to Webcastify!</title>
+  <title>Witaj na stronie KurtuazyjneBrzmienie!</title>
   <link rel="stylesheet" type="text/css" href="assets/css/register.css">
 </head>
 <body>
@@ -29,21 +29,21 @@ function getInputValue($name) {
 	<div id="loginContainer">
 		<div id="inputContainer">
 			<form id="loginForm" action="register.php" method="POST">
-				<h2>Login to your account</h2>
+				<h2>Zaloguj się na swoje konto</h2>
 					<p>
 					<?php echo $account->getError(Constants::$loginFailed);  ?>
-						<label for="loginUsername">Username</label>
+						<label for="loginUsername">Nazwa użytkownika</label>
 						<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bartSimpson" value="<?php getInputValue('loginUsername'); ?>" required>  
 					</p>
 					<p>
-						<label for="loginPassword">Password</label>
+						<label for="loginPassword">Hasło</label>
 						<input id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
 					</p>
 					
-					<button type="submit" name="loginButton">LOG IN</button>
+					<button type="submit" name="loginButton">ZALOGUJ SIĘ</button>
 
 					<div class="hasAccountText">
-						<span class="hideLogin">Don't have an account yet? Sign up here.</span>
+						<span class="hideLogin">Nie masz jeszcze konta? Zarejestruj się tutej.</span>
 					</div>
 
 			</form>
@@ -51,21 +51,21 @@ function getInputValue($name) {
 
 
 			<form id="registerForm" action="register.php" method="POST">
-				<h2>Create your account</h2>
+				<h2>Załóż konto</h2>
 					<p>
 						<?php echo $account->getError(Constants::$usernameCharacters);  ?>	
 						<?php echo $account->getError(Constants::$usernameTaken);  ?>	
-						<label for="username">Username</label>
+						<label for="username">Nazwa użytkownika</label>
 						<input id="username" name="username" type="text" placeholder="e.g. bartSimpson" value="<?php getInputValue('username'); ?>"required>  
 					</p>
 					<p>
 					<?php echo $account->getError(Constants::$firstNameCharacters)  ?>	
-						<label for="firstName">First name</label>
+						<label for="firstName">Imię</label>
 						<input id="firstName" name="firstName" type="text" placeholder="e.g. Bart" value="<?php getInputValue('firstName'); ?>" required>  
 					</p>
 					<p>
 					<?php echo $account->getError(Constants::$lastNameCharacters);  ?>	
-						<label for="lastName">Last name</label>
+						<label for="lastName">Nazwisko</label>
 						<input id="lastName" name="lastName" type="text" placeholder="e.g. Simpson" value="<?php getInputValue('lastName'); ?>" required>  
 					</p>
 
@@ -79,7 +79,7 @@ function getInputValue($name) {
 
 					
 					<p>
-						<label for="email2">Confirm email</label>
+						<label for="email2">Potwierdź email</label>
 						<input id="email2" name="email2" type="email" placeholder="e.g. bart@gmail.com" value=" <?php getInputValue('email2'); ?>" required>  
 					</p>
 
@@ -88,33 +88,33 @@ function getInputValue($name) {
 					<?php echo $account->getError(Constants::$passwordsDoNotMatch);  ?>	
 					<?php echo $account->getError(Constants::$passwordNotAlphanumeric);  ?>	
 					<?php echo $account->getError(Constants::$passwordsCharacters);  ?>	
-						<label for="password">Password</label>
+						<label for="password">Hasło</label>
 						<input id="password" name="password" type="password" placeholder="Your password" required>
 					</p>
 
 
 					<p>
-						<label for="password2">Confirm password</label>
+						<label for="password2">Potwierdź hasło</label>
 						<input id="password2" name="password2" type="password" placeholder="Your password" required>
 					</p>
 					
-					<button type="submit" name="registerButton">SIGN IN</button>
+					<button type="submit" name="registerButton">ZAREJESTRUJ SIĘ</button>
 
 					
 					<div class="hasAccountText">
-						<span class="hideRegister">Already have an account? Log in here.</span>
+						<span class="hideRegister">Masz już konto? Zaloguj się tutej.</span>
 					</div>
 
 			</form>
 		  </div>
 		  
 	<div id="loginText">
-		<h1>Get great podcast, right now</h1>
-		<h2>Listen to loads of podcasts for free</h2>
+		<h1>Gdziekolwiek zmierzasz, ulubione utwory na wyciągnięcie ręki</h1>
+		<h2>Słuchaj setek tysięcy kompozycji za darmo</h2>
 		<ul>
-			<li>Discover podcasts you'll fall in love with</li>
-			<li>Create your own playlist</li>
-			<li>Follow artists to keep up to date</li>
+			<li>Zanurz się w muzycznym akompaniamencie, który pokochasz</li>
+			<li>Stwórz swoją autorską playlistę</li>
+			<li>Śledź losy artystów i bądź zawsze na bieżąco</li>
 		</ul>
 	</div>		
 

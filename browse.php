@@ -1,6 +1,6 @@
 <?php include("includes/includedFiles.php"); ?>
 
-<h1 class="pageHeadingBig">You may also like</h1>
+<h1 class="pageHeadingBig">Sprawdź to gunwo mordo</h1>
 
 <div class="gridViewContainer">
 

@@ -9,7 +9,7 @@
 		<div class="group">
 
 			<div class="navItem">
-			<span role="link" tabindex="0" onclick="openPage('search.php')" class="navItemLink"> Search
+			<span role="link" tabindex="0" onclick="openPage('search.php')" class="navItemLink"> Szukaj
 					<img src="assets/images/icons/search.png" class="icon" alt="Search">
 			</span>
 			</div>
@@ -18,11 +18,11 @@
 
 		<div class="group">
 			<div class="navItem">
-			<span role="link" tabindex="0" onclick="openPage('browse.php')" class="navItemLink">Browse</span>
+			<span role="link" tabindex="0" onclick="openPage('browse.php')" class="navItemLink">Przeglądaj</span>
 			</div>
 
 			<div class="navItem">
-			<span role="link" tabindex="0" onclick="openPage('yourPodcast.php')" class="navItemLink">Your Podcast</span>
+			<span role="link" tabindex="0" onclick="openPage('yourPodcast.php')" class="navItemLink">Twoja lista</span>
 			</div>
 
 			<div class="navItem">

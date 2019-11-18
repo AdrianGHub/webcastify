@@ -244,28 +244,28 @@ function pausePodcast() {
 
 				<div class="buttons">
 
-					<button class="controlButton shuffle" title="Shuffle button" onclick="setShuffle()">
-						<img src="assets/images/icons/shuffle.png" alt="Shuffle">
+					<button class="controlButton shuffle" title="Losuj" onclick="setShuffle()">
+						<img src="assets/images/icons/shuffle.png" alt="Losuj">
 					</button>
 
-					<button class="controlButton previous" title="Previous button" onclick="prevPodcast()">
-						<img src="assets/images/icons/previous.png" alt="Previous">
+					<button class="controlButton previous" title="Poprzedni utwór" onclick="prevPodcast()">
+						<img src="assets/images/icons/previous.png" alt="Poprzedni utwór">
 					</button>
 
-					<button class="controlButton play" title="Play button" onclick="playPodcast()">
-						<img src="assets/images/icons/play.png" alt="Play">
+					<button class="controlButton play" title="Odtwórz" onclick="playPodcast()">
+						<img src="assets/images/icons/play.png" alt="Odtwórz">
 					</button>
 
-					<button class="controlButton pause" title="Pause button" onclick="pausePodcast()" style="display: none;">
-						<img src="assets/images/icons/pause.png" alt="Pause">
+					<button class="controlButton pause" title="Zatrzymaj" onclick="pausePodcast()" style="display: none;">
+						<img src="assets/images/icons/pause.png" alt="Zatrzymaj">
 					</button>
 
-					<button class="controlButton next" title="Next button" onclick="nextPodcast()">
-						<img src="assets/images/icons/next.png" alt="Next">
+					<button class="controlButton next" title="Następny utwór" onclick="nextPodcast()">
+						<img src="assets/images/icons/next.png" alt="Następny utwór">
 					</button>
 
-					<button class="controlButton repeat" title="Repeat button" onclick="setRepeat()">
-						<img src="assets/images/icons/repeat.png" alt="Repeat">
+					<button class="controlButton repeat" title="Powtórz" onclick="setRepeat()">
+						<img src="assets/images/icons/repeat.png" alt="Powtórz">
 					</button>
 
 				</div>
@@ -295,8 +295,8 @@ function pausePodcast() {
 		<div id="nowPlayingRight">
 			<div class="volumeBar">
 
-				<button class="controlButton volume" title="Volume button" onclick="setMute()">
-					<img src="assets/images/icons/volume.png" alt="Volume">
+				<button class="controlButton volume" title="Głośność" onclick="setMute()">
+					<img src="assets/images/icons/volume.png" alt="Głośność">
 				</button>
 
 				<div class="progressBar">
