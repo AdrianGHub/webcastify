@@ -19,7 +19,7 @@ else {
 
 <html>
 <head>
-	<title>Witaj na stronie KurtuazyjneBrzmienie!</title>
+	<title>Kurtuazyjne Brzmienie - dobry nastrój w każdej chwili!</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

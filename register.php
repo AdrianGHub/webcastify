@@ -20,7 +20,7 @@ function getInputValue($name) {
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <title>Witaj na stronie KurtuazyjneBrzmienie!</title>
+  <title>Kurtuazyjne Brzmienie - dobry nastrój w każdej chwili!</title>
   <link rel="stylesheet" type="text/css" href="assets/css/register.css">
 </head>
 <body>
