@@ -365,4 +365,40 @@ body {
 }
 
 
+.artistInfo {
+    text-align: center;
+}
+
+.artistButton {
+    min-width: 130px;
+    color: #fff;
+    background: transparent;
+    letter-spacing: 2;
+    font-weight: 700;
+    margin-bottom: 10px;;
+    padding: 5px 10px;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.artistButton.green {
+    background-color: #2ebd59;
+    border-color: #2ebd59;
+}
+
+.borderBottom {
+    border-bottom: 1px solid #939393;
+    margin-bottom: 20px;
+}
+
+.tracklistContainer h2, .gridViewContainer h2 {
+    text-align: center;
+}
+
+[role="link"] {
+    cursor: pointer;
+}
 
