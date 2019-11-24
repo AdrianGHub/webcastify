@@ -12,7 +12,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
         $userLoggedIn = new User($con, $_GET['userLoggedIn']);
     }
     else {
-        echo "Nazwa użytkownika nie została przekazana na stronie. Sprawdź funcje w JS ---> openPage()";
+        echo "Nazwa użytkownika nie została przekazana na stronie. Sprawdź funkcje w JS ---> openPage()";
         exit();
     }
 }
