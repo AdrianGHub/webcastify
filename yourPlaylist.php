@@ -11,7 +11,7 @@
             <?php  
 			$username = $userLoggedIn->getUsername();
 
-			$playlistsQuery = mysqli_query($con, "SELECT * FROM playlists WHERE owner='$username'");
+			$playlistsQuery = mysqli_query($con, "SELECT * FROM playlists");
 
 			if(mysqli_num_rows($playlistsQuery) == 0) {
 				echo "<span class='noResults'>Nie dodałeś jeszcze żadnej listy ulubionych nut.</span>";

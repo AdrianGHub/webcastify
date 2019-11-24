@@ -26,9 +26,10 @@ function openPage(url) {
 }
 
 function createPlaylist() {
+
     var popup = prompt("Wprowadź nazwę swojej nowej listy ulubionych nut");
 
-    if(popup != null) {
+    if(popup != "") {
 
         $.post("includes/handlers/ajax/createPlaylist.php", {name: popup, username: userLoggedIn})
         .done(function(error) {
@@ -41,6 +42,9 @@ function createPlaylist() {
             // do sth when ajax returns 
             openPage("yourPlaylist.php");
         })
+    }
+    else {
+        alert("Wprowadź nazwę...");
     }
 }
 

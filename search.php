@@ -22,12 +22,13 @@ $(".searchInput").focus();
 
 $(function() {
 
+
 	$(".searchInput").keyup(function() {
 		clearTimeout(timer);
 
 		timer = setTimeout(function() {
 			var val = $(".searchInput").val();
-			openPage("search.php?term=" + val);
+			openPage(`search.php?term=${val}`);
 		}, 2000);
 
 	})
@@ -45,7 +46,8 @@ $(function() {
 	<ul class="tracklist">
 		
 		<?php
-		$podcastsQuery = mysqli_query($con, "SELECT id FROM podcasts WHERE title LIKE '$term%' LIMIT 10");
+
+		$podcastsQuery = mysqli_query($con, "SELECT id FROM podcasts WHERE 'title' LIKE '$term%' LIMIT 10");
 
 		if(mysqli_num_rows($podcastsQuery) == 0) {
 			echo "<span class='noResults'>Nie znaleziono pasującej frazy " . $term . "</span>";
@@ -109,7 +111,7 @@ $(function() {
 
     <?php 
     
-        $artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
+        $artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE 'name' LIKE '$term%' LIMIT 10");
 
         if(mysqli_num_rows($artistsQuery) == 0) {
 			echo "<span class='noResults'>Nie znaleziono pasującej frazy " . $term . "</span>";
@@ -137,7 +139,7 @@ $(function() {
 <div class="gridViewContainer">
             <h2>ALBUMY</h2>
 <?php  
-    $albumQuery = mysqli_query($con, "SELECT * FROM album WHERE title LIKE '$term%' LIMIT 10");
+    $albumQuery = mysqli_query($con, "SELECT * FROM album WHERE 'title' LIKE '$term%' LIMIT 10");
 
     if(mysqli_num_rows($albumQuery) == 0) {
         echo "<span class='noResults'>Nie znaleziono pasującej frazy " . $term . "</span>";
