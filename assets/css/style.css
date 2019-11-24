@@ -376,10 +376,10 @@ body {
     letter-spacing: 2;
     font-weight: 700;
     margin-bottom: 10px;;
-    padding: 5px 10px;
+    padding: 15px 10px;
     text-align: center;
     border: 2px solid #fff;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
 
 }
@@ -441,4 +441,34 @@ input:focus {
 .noResults {
     display: block;
     margin: 15px;
+}
+
+.playlistsContainer {
+    padding: 10px 0;
+}
+
+.playlistButton {
+    min-width: 130px;
+    color: #fff;
+    background: transparent;
+    letter-spacing: 2;
+    font-weight: 700;
+    margin-bottom: 10px;;
+    padding: 15px 10px;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.playlistButton.green {
+    background-color: #2ebd59;
+    border-color: #2ebd59;
+}
+
+.playlistImage {
+    border: 3px solid #282828;
+    padding: 10px;
 }

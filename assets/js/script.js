@@ -25,6 +25,24 @@ function openPage(url) {
     history.pushState(null, null, url);
 }
 
+function createPlaylist() {
+    var popup = prompt("Wprowadź nazwę swojej nowej listy ulubionych nut");
+
+    if(popup != null) {
+
+        $.post("includes/handlers/ajax/createPlaylist.php", {name: popup, username: userLoggedIn})
+        .done(function(error) {
+
+            if(error != "") {
+                alert(error);
+                return;
+            }
+
+            // do sth when ajax returns 
+            openPage("yourPlaylist.php");
+        })
+    }
+}
 
 // class Audio {
 
