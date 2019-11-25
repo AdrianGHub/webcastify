@@ -41,10 +41,28 @@ function createPlaylist() {
 
             // do sth when ajax returns 
             openPage("yourPlaylist.php");
-        })
+        });
     }
     else {
         alert("Wprowadź nazwę...");
+    }
+}
+
+function deletePlaylist(playlistId) {
+    var prompt = confirm("Jesteś pewny, że chcesz usunąć tę listę muzyczek?");
+
+    if(prompt) {
+        $.post("includes/handlers/ajax/deletePlaylist.php", {plylistId: playlistId})
+        .done(function(error) {
+
+            if(error != "") {
+                alert(error);
+                return;
+            }
+
+            // do sth when ajax returns 
+            openPage("yourPlaylist.php");
+        });
     }
 }
 

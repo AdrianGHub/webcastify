@@ -1,28 +1,29 @@
 <?php include("includes/includedFiles.php");
 
 if(isset($_GET['id'])) {
-    $albumId = $_GET['id'];
+    $playlistId = $_GET['id'];
 } 
 else {
     header("Location: index.php");
 }
 
-$album = new Album($con, $albumId);
-
-
-$artist = $album->getArtist();
+$playlist = new Playlist($con, $playlistId);
+$owner = new User($con, $playlist->getOwner());
 
 ?>
 
 <div class="entityInfo">
     <div class="leftSection">
-        <img src="<?php echo $album->getArtworkPath(); ?>" alt="">
+        <div class="playlistImage">
+            <img src="assets/images/icons/playlist.png">
+        </div>
     </div>
 
     <div class="rightSection">
-        <h2><?php echo $album->getTitle(); ?></h2>
-        <p role="link" tabindex="0" onclick="openPage('artist.php?id=$artistId')">By <?php echo $artist->getName(); ?></p>
-        <p><?php echo $album->getNumberOfPodcasts(); ?> muzyczek</p>
+        <h2><?php echo $playlist->getName(); ?></h2>
+        <p>By <?php echo $playlist->getOwner(); ?></p>
+        <p><?php echo $playlist->getNumberOfPodcasts(); ?></p>
+        <button class="playlistButton" onclick="deletePlaylist('<?php echo $playlistId; ?>')">DELETE PLAYLIST</button>
     </div>
 </div>
 
@@ -30,25 +31,28 @@ $artist = $album->getArtist();
         <ul class="tracklist">
             
             <?php 
-            $podcastIdArray = $album->getPodcastIds(); 
+
+            echo $playlistId;
+
+            $podcastIdArray = $playlist->getPodcastIds(); 
 
             $i = 1;
             foreach($podcastIdArray as $podcastId) {
                 
 
-                $albumPodcast = new Podcast($con, $podcastId);
+                $playlistPodcast = new Podcast($con, $podcastId);
 
-                $albumArtist = $albumPodcast->getArtist(); 
+                $playlistArtist = $playlistPodcast->getArtist(); 
 
                 echo "<li class='tracklistRow'>
                         <div class='trackCount'>
-                        <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $albumPodcast->getId() . "\", tempPlaylist, true)'>
+                        <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"" . $playlistPodcast->getId() . "\", tempPlaylist, true)'>
                             <span class='trackNumber'>$i</span>
                         </div>
 
                     <div class='trackInfo'>
-                        <span class='trackName'>" . $albumPodcast->getTitle() . "</span>    
-                        <span class='artistName'>" . $albumArtist->getName() . "</  span>
+                        <span class='trackName'>" . $playlistPodcast->getTitle() . "</span>    
+                        <span class='artistName'>" . $playlistArtist->getName() . "</  span>
                     </div>
                     
                     <div class='trackOptions'>
@@ -56,7 +60,7 @@ $artist = $album->getArtist();
                     </div>
 
                     <div class='trackDuration'>
-                        <span class='duration'>" . $albumPodcast->getDuration() . "</span>
+                        <span class='duration'>" . $playlistPodcast->getDuration() . "</span>
                     </div>
 
 
