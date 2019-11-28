@@ -112,8 +112,6 @@ $(function() {
     <?php 
     
 		$artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
-		
-		echo "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10";
 
         if(mysqli_num_rows($artistsQuery) == 0) {
 			echo "<span class='noResults'>Nie znaleziono pasującej frazy " . $term . "</span>";

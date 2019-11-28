@@ -19,7 +19,7 @@ function openPage(url) {
         url = url + "?";
     }
 
-    var  encodedUrl = encodeURI(`${url}"&userLoggedIn="${userLoggedIn}`);
+    var  encodedUrl = encodeURI(`${url}&userLoggedIn=${userLoggedIn}`);
     $("#mainContent").load(encodedUrl);
     $("body").scrollTop(0);
     history.pushState(null, null, url);

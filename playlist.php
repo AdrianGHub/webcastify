@@ -32,8 +32,6 @@ $owner = new User($con, $playlist->getOwner());
             
             <?php 
 
-            echo $playlistId;
-
             $podcastIdArray = $playlist->getPodcastIds(); 
 
             $i = 1;
