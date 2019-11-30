@@ -12,7 +12,7 @@ else {
 <div class="searchContainer">
 
 	<h4>Wyszukaj artysty, albumu lub muzyczki</h4>
-	<input type="text" class="searchInput" value="<?php echo $term; ?>" placeholder="Wprowadź pożądaną frazę..." onfocus="this.value = this.value">
+	<input type="text" class="searchInput" value="<?php echo $term; ?>" placeholder="Wprowadź pożądaną frazę..." onfocus="var val=this.value; this.value=''; this.value= val;">
 
 </div>
 
