@@ -9,6 +9,18 @@ var shuffle = false;
 var userLoggedIn; 
 var timer;
 
+$(document).click(function(click) {
+    var target = $(click.target);
+
+    if(!target.hasClass("item") && !target.hasClass("optionsButton")) {
+        hideOptionsMenu();
+    }
+});
+
+$(window).scroll(function() {
+    hideOptionsMenu();
+});
+
 function openPage(url) {
 
     if(timer != null) {
@@ -78,6 +90,25 @@ function deletePlaylist(playlistId) {
 //     }
 
 // }
+
+function hideOptionsMenu() {
+    var menu = $(".optionsMenu");
+    if(menu.css("display") != "none") {
+        menu.css("display", "none");
+    }
+}
+
+function showOptionsMenu(button) {
+    var menu = $(".optionsMenu");
+    var menuWidth = menu.width();
+
+    var scrollTop = $(window).scrollTop(); // disctance from top of the window to the top of the document
+    var elementOffset = $(button).offset().top // distance from the top of the document
+    var top = elementOffset - scrollTop;
+    var left = $(button).position().left;
+
+    menu.css({ "top": `${top}px`, "left": `${left - menuWidth}px`, "display": "inline"  });
+}
 
 function formatTime(seconds) {
     var time = Math.round(seconds);
