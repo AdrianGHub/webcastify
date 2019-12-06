@@ -21,6 +21,26 @@ $(window).scroll(function() {
     hideOptionsMenu();
 });
 
+$(document).on("change", "select.playlist", function() {
+    var select = $(this); 
+    var playlistId = select.val();
+    var podcastId = select.prev(".podcastId").val();
+
+    $.post("includes/handlers/ajax/addToPlaylist.php", {
+        playlistId: playlistId,
+        podcastId: podcastId
+    }).done(function() {
+
+        // if(error != "") {
+        //     alert(error);
+        //     return;
+        // }
+        
+        hideOptionsMenu();
+        select.val("");
+    });
+})
+
 function openPage(url) {
 
     if(timer != null) {
@@ -99,8 +119,10 @@ function hideOptionsMenu() {
 }
 
 function showOptionsMenu(button) {
+    var podcastId = $(button).prevAll(".podcastId").val();
     var menu = $(".optionsMenu");
     var menuWidth = menu.width();
+    menu.find(".podcastId").val(podcastId);
 
     var scrollTop = $(window).scrollTop(); // disctance from top of the window to the top of the document
     var elementOffset = $(button).offset().top // distance from the top of the document

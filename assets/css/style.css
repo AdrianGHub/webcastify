@@ -504,5 +504,6 @@ input:focus {
 .optionMenu select {
     border: none;
     -webkit-appearance: none;
-    -moz-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
 } 

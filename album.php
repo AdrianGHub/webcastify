@@ -52,6 +52,7 @@ $artist = $album->getArtist();
                     </div>
                     
                     <div class='trackOptions'>
+                        <input type='hidden' class='podcastId' value='" . $albumPodcast->getId() . "'>
                         <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
                     </div>
 
