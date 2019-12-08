@@ -54,7 +54,8 @@ $owner = new User($con, $playlist->getOwner());
                     </div>
                     
                     <div class='trackOptions'>
-                        <img class='optionsButton' src='assets/images/icons/more.png'>
+                        <input type='hidden' class='podcastId' value='" . $playlistPodcast->getId() . "'>
+                        <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
                     </div>
 
                     <div class='trackDuration'>
@@ -81,3 +82,8 @@ $owner = new User($con, $playlist->getOwner());
         </ul>
 
 </div>
+
+<nav class="optionsMenu">
+    <input type="hidden" class="podcastId">
+    <?php echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getUsername()); ?>
+</nav>

@@ -81,9 +81,10 @@ $(function() {
 						<span class='artistName'>" . $albumArtist->getName() . "</span>
 					</div>
 
-					<div class='trackOptions'>
-						<img class='optionsButton' src='assets/images/icons/more.png'>
-					</div>
+                    <div class='trackOptions'>
+                        <input type='hidden' class='podcastId' value='" . $albumPodcast->getId() . "'>
+                        <img class='optionsButton' src='assets/images/icons/more.png' onclick='showOptionsMenu(this)'>
+                    </div>
 
 					<div class='trackDuration'>
 						<span class='duration'>" . $albumPodcast->getDuration() . "</span>
@@ -165,6 +166,11 @@ $(function() {
 
 
 </div>
+
+<nav class="optionsMenu">
+    <input type="hidden" class="podcastId">
+    <?php echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getUsername()); ?>
+</nav>
 
 
 
