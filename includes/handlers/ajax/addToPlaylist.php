@@ -14,7 +14,7 @@
         $query = mysqli_query($con, "INSERT INTO playlistPodcasts VALUES('', '$podcastId', '$playlistId', '$order')");
     }
     else {
-        echo "Playlist lub podcastId nie został przekazany do pliku addToPlaylist.php";
+        echo "Parametr playlistId lub podcastId nie został przekazany do pliku addToPlaylist.php";
     }
 
 

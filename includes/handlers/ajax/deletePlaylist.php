@@ -9,7 +9,7 @@ if(isset($_POST['playlistId'])) {
     $playlistQuery = mysqli_query($con, "DELETE FROM playlistPodcasts WHERE playlistId='$playlistId' ");
 }
 else {
-    echo "Parametr playlistId nie został przekazana do pliku deletePlaylist.php ";
+    echo "Parametr playlistId nie został przekazany do pliku deletePlaylist.php ";
 }
 
 ?>

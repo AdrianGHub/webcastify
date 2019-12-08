@@ -57,6 +57,22 @@ function openPage(url) {
     history.pushState(null, null, url);
 }
 
+function removeFromPlaylist(button, playlistId) {
+    var podcastId = $(button).prevAll(".podcastId").val();
+
+    $.post("includes/handlers/ajax/removeFromPlaylist.php", {playlistId: playlistId, podcastId: podcastId })
+    .done(function(error) {
+
+        if(error != "") {
+            alert(error);
+            return;
+        }
+
+        // do sth when ajax returns 
+        openPage(`playlist.php?id=${playlistId}`);
+    });    
+}
+
 function createPlaylist() {
 
     var popup = prompt("Wprowadź nazwę swojej nowej listy ulubionych nut");
@@ -84,7 +100,7 @@ function deletePlaylist(playlistId) {
     var prompt = confirm("Jesteś pewny, że chcesz usunąć tę listę muzyczek?");
 
     if(prompt) {
-        $.post("includes/handlers/ajax/deletePlaylist.php", {plylistId: playlistId})
+        $.post("includes/handlers/ajax/deletePlaylist.php", {playlistId: playlistId})
         .done(function(error) {
 
             if(error != "") {
