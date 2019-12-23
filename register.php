@@ -33,11 +33,11 @@ function getInputValue($name) {
 					<p>
 					<?php echo $account->getError(Constants::$loginFailed);  ?>
 						<label for="loginUsername">Nazwa użytkownika</label>
-						<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bartSimpson" value="<?php getInputValue('loginUsername'); ?>" required>  
+						<input id="loginUsername" name="loginUsername" type="text" placeholder="np. janKowal" value="<?php getInputValue('loginUsername'); ?>" required>  
 					</p>
 					<p>
 						<label for="loginPassword">Hasło</label>
-						<input id="loginPassword" name="loginPassword" type="password" placeholder="Your password" required>
+						<input id="loginPassword" name="loginPassword" type="password" placeholder="Twoje hasło" required>
 					</p>
 					
 					<button type="submit" name="loginButton">ZALOGUJ SIĘ</button>
@@ -56,7 +56,7 @@ function getInputValue($name) {
 						<?php echo $account->getError(Constants::$usernameCharacters);  ?>	
 						<?php echo $account->getError(Constants::$usernameTaken);  ?>	
 						<label for="username">Nazwa użytkownika</label>
-						<input id="username" name="username" type="text" placeholder="e.g. janKowal" value="<?php getInputValue('username'); ?>"required>  
+						<input id="username" name="username" type="text" placeholder="np. janKowal" value="<?php getInputValue('username'); ?>"required>  
 					</p>
 					<p>
 					<?php echo $account->getError(Constants::$firstNameCharacters)  ?>	
