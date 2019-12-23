@@ -124,7 +124,7 @@
 			return;
 		}
 
-		if(strlen($pw) > 30 || strlen($pw) < 6) {
+		if(strlen($pw) > 30 || strlen($pw) < 5) {
 			array_push($this->errorArray, Constants::$passwordsCharacters);
 			return;
 		}

@@ -56,17 +56,17 @@ function getInputValue($name) {
 						<?php echo $account->getError(Constants::$usernameCharacters);  ?>	
 						<?php echo $account->getError(Constants::$usernameTaken);  ?>	
 						<label for="username">Nazwa użytkownika</label>
-						<input id="username" name="username" type="text" placeholder="e.g. bartSimpson" value="<?php getInputValue('username'); ?>"required>  
+						<input id="username" name="username" type="text" placeholder="e.g. janKowal" value="<?php getInputValue('username'); ?>"required>  
 					</p>
 					<p>
 					<?php echo $account->getError(Constants::$firstNameCharacters)  ?>	
 						<label for="firstName">Imię</label>
-						<input id="firstName" name="firstName" type="text" placeholder="e.g. Bart" value="<?php getInputValue('firstName'); ?>" required>  
+						<input id="firstName" name="firstName" type="text" placeholder="np. Jan" value="<?php getInputValue('firstName'); ?>" required>  
 					</p>
 					<p>
 					<?php echo $account->getError(Constants::$lastNameCharacters);  ?>	
 						<label for="lastName">Nazwisko</label>
-						<input id="lastName" name="lastName" type="text" placeholder="e.g. Simpson" value="<?php getInputValue('lastName'); ?>" required>  
+						<input id="lastName" name="lastName" type="text" placeholder="np. Kowalski" value="<?php getInputValue('lastName'); ?>" required>  
 					</p>
 
 					<p>
@@ -74,13 +74,13 @@ function getInputValue($name) {
 					<?php echo $account->getError(Constants::$emailInvalid);  ?>	
 					<?php echo $account->getError(Constants::$emailTaken);  ?>	
 						<label for="email">Email</label>
-						<input id="email" name="email" type="email" placeholder="e.g. bart@gmail.com"value=" <?php getInputValue('email'); ?>" required>  
+						<input id="email" name="email" type="email" placeholder="np. jankowal@gmail.com"value=" <?php getInputValue('email'); ?>" required>  
 					</p>
 
 					
 					<p>
 						<label for="email2">Potwierdź email</label>
-						<input id="email2" name="email2" type="email" placeholder="e.g. bart@gmail.com" value=" <?php getInputValue('email2'); ?>" required>  
+						<input id="email2" name="email2" type="email" placeholder="np. jankowal@gmail.com" value=" <?php getInputValue('email2'); ?>" required>  
 					</p>
 
 
@@ -89,13 +89,13 @@ function getInputValue($name) {
 					<?php echo $account->getError(Constants::$passwordNotAlphanumeric);  ?>	
 					<?php echo $account->getError(Constants::$passwordsCharacters);  ?>	
 						<label for="password">Hasło</label>
-						<input id="password" name="password" type="password" placeholder="Your password" required>
+						<input id="password" name="password" type="password" placeholder="Twoje hasło" required>
 					</p>
 
 
 					<p>
 						<label for="password2">Potwierdź hasło</label>
-						<input id="password2" name="password2" type="password" placeholder="Your password" required>
+						<input id="password2" name="password2" type="password" placeholder="Twoje hasło" required>
 					</p>
 					
 					<button type="submit" name="registerButton">ZAREJESTRUJ SIĘ</button>
